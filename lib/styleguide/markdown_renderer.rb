@@ -15,12 +15,10 @@ module Styleguide
     def example(code, options)
       <<-EXAMPLE
         <div class="example">
-          <iframe src="/styleguide/example?example=#{Base64.urlsafe_encode64(code)}"
-                  width="#{options['width'] || '100%'}"
-                  height="#{options['height'] || 'auto'}"></iframe>
+          #{render code}
         </div>
         <div class="example-source">
-          #{block_code(code.strip, 'erb')}
+          #{block_code(code.strip, 'slim')}
         </div>
       EXAMPLE
     end
