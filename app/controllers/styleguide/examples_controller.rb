@@ -4,7 +4,7 @@ module Styleguide
     helper Rails.application.routes.url_helpers
 
     def show
-      render inline: Base64.urlsafe_decode64(params[:example]), layout: "styleguide/example"
+      params[:example]
     end
   end
 end
