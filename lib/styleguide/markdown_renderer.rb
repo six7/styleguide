@@ -15,10 +15,10 @@ module Styleguide
     def example(code, options)
       <<-EXAMPLE
         <div class="example">
-          #{render code}
+          #{code}
         </div>
         <div class="example-source">
-          #{block_code(code.strip, 'slim')}
+          #{block_code(code.strip, "slim")}
         </div>
       EXAMPLE
     end
